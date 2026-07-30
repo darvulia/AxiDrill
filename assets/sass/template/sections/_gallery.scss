@@ -1,0 +1,549 @@
+@use '../../base/mixin'as *;
+@use '../../base/variable'as *;
+
+.gallery-shape1 {
+    position: absolute;
+    left: 0;
+    top: -24px;
+}
+
+.gallery-shape2 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 535px;
+    clip-path: polygon(230px 0%, 100% 0, 100% 100%, 0 100%, 0% 190px);
+    background-color: var(--title-color);
+}
+
+.gallery-shape3 {
+    position: absolute;
+    left: 0;
+    top: 20.1%;
+}
+
+.gallery-style3,
+.gallery-style1 {
+    .gallery-content {
+        position: absolute;
+        left: 50px;
+        bottom: 50px;
+        z-index: 2;
+        transition: all ease 0.4s;
+    }
+
+    .gallery-label {
+        background-color: var(--theme-color);
+        color: var(--white-color);
+        display: inline-block;
+        line-height: 1;
+        font-family: var(--title-font);
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 13px 21px;
+    }
+
+    .gallery-title {
+        background-color: var(--white-color);
+        color: var(--title-color);
+        display: block;
+        max-width: max-content;
+        padding: 15px 20px;
+    }
+
+    .gallery-title,
+    .gallery-label {
+        transition: all ease 0.4s;
+        transform: translateY(20px);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+}
+
+
+.gallery-style1:hover,
+.gallery-style3 .gallery-item:hover,
+.gallery-style3 .gallery-item.active {
+
+    .gallery-title,
+    .gallery-label {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .gallery-title {
+        transition-delay: 0.1s;
+    }
+}
+
+.gallery-style1 {
+    position: relative;
+    margin-bottom: 30px;
+
+
+    .gallery-img {
+        overflow: hidden;
+
+
+        img {
+            width: 100%;
+            transition: all ease 0.4s;
+            transform: scale(1.004);
+        }
+    }
+
+    &:hover {
+        .gallery-img {
+            img {
+                transform: scale(1.1);
+            }
+        }
+
+    }
+
+    .gallery-title {
+        margin-bottom: 0;
+    }
+
+    &.layout2 {
+        &:hover {
+
+            .gallery-content {
+                left: 40px;
+                bottom: 40px;
+            }
+        }
+    }
+
+}
+
+.gallery-style2 {
+    position: relative;
+    margin-bottom: 30px;
+
+    .gallery-img {
+        overflow: hidden;
+        position: relative;
+
+        img {
+            width: 100%;
+            transform: scale(1.001) rotate(0);
+            transition: all ease 0.4s;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 154px;
+            height: 170px;
+            background-color: var(--theme-color);
+            clip-path: polygon(0 0, 0 100%, 100% 100%);
+            transition: all ease 0.4s;
+            transform: translate(-20px, 50px);
+            opacity: 0;
+            visibility: hidden;
+            display: inline-block;
+            z-index: 1;
+        }
+    }
+
+    .gallery-label,
+    .gallery-title {
+        background-color: var(--white-color);
+        line-height: 1;
+        transition: all ease 0.4s;
+        margin: 0;
+        transform: translateY(20px);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .gallery-title {
+        font-size: 20px;
+        padding: 9px 17.5px;
+    }
+
+    .gallery-label {
+        font-size: 14px;
+        color: var(--title-color);
+        padding: 10px 17.5px;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .gallery-content {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 35px;
+        z-index: 2;
+    }
+
+    &:hover {
+
+        .gallery-title,
+        .gallery-label {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .gallery-title {
+            transition-delay: 0.1s;
+        }
+
+
+        .gallery-img {
+            img {
+                transform: scale(1.1) rotate(3deg);
+            }
+
+            &::before {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(-2px, 2px);
+            }
+        }
+    }
+
+
+}
+
+.gallery-style3 {
+    display: flex;
+    gap: 30px;
+
+    .icon-btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        font-size: 26px;
+        border-radius: 0;
+        background-color: var(--theme-color);
+        color: var(--white-color);
+        text-align: center;
+        transition: all ease 0.4s;
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(30px, -30px);
+
+        &:after,
+        &:before {
+            content: '';
+            position: absolute;
+            top: var(--shape-width, -7px);
+            right: var(--shape-width, -7px);
+            bottom: var(--shape-width, -7px);
+            left: var(--shape-width, -7px);
+            background-color: var(--white-color);
+            z-index: -1;
+            border-radius: 0;
+            transition: all ease 0.4s;
+        }
+
+        &:after {
+            --shape-width: 0;
+            background-color: var(--theme-color);
+            border-radius: 0;
+        }
+
+        &:hover {
+            &:after {
+                background-color: $title-color;
+            }
+        }
+    }
+
+    .gallery-img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        transition: all ease 0.4s;
+    }
+
+    .gallery-title {
+        margin: 0;
+    }
+
+    .gallery-content {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        padding: 40px 40px;
+    }
+
+    .gallery-item {
+        position: relative;
+        width: 15%;
+        height: 478px;
+        overflow: hidden;
+        transition: all ease 0.4s;
+
+        &.active {
+            width: 40%;
+        }
+
+        &:hover,
+        &.active {
+
+            .icon-btn {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(0, 0);
+                transition-delay: 0.25s;
+            }
+
+            .gallery-title,
+            .gallery-label {
+                transition-delay: 0.2s;
+            }
+
+            .gallery-title {
+                transition-delay: 0.25s;
+            }
+        }
+    }
+
+
+
+}
+
+
+.project-meta-box {
+    background-color: $secondary-color;
+    padding: 40px;
+    width: 330px;
+    max-width: 100%;
+    margin-bottom: 40px;
+
+    .box-title {
+        position: relative;
+        margin-top: -0.2rem;
+        padding-bottom: 14px;
+        margin-bottom: 23px;
+
+        &:after,
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: $theme-color;
+            width: 40px;
+            height: 1px;
+            z-index: 2;
+        }
+
+        &:after {
+            z-index: 1;
+            width: 100%;
+            background-color: $border-color;
+        }
+    }
+
+
+    .info-label {
+        font-size: 14px;
+        display: block;
+        line-height: 1;
+        margin-bottom: 13px;
+    }
+
+    .info-text {
+        font-size: 18px;
+        font-weight: 600;
+        color: $title-color;
+        line-height: 1;
+        font-family: $title-font;
+        margin-bottom: 0;
+    }
+
+    .info-item:not(:last-child) {
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 18px;
+        margin-bottom: 23px;
+    }
+}
+
+.project-details-wrapper {
+
+    p {
+        margin-bottom: 25px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 21px;
+    }
+
+
+    ol,
+    ul {
+        margin-bottom: 33px;
+    }
+
+}
+
+@include xl {
+
+    .gallery-style3,
+    .gallery-style1 {
+        .gallery-content {
+            left: 25px;
+            bottom: 15px;
+        }
+
+        .gallery-title {
+            padding: 9px 15px;
+            font-size: 18px;
+        }
+
+        .gallery-label {
+            font-size: 12px;
+            padding: 10px 13px;
+        }
+    }
+
+    .gallery-style1 {
+        &.layout2 {
+            &:hover {
+
+                .gallery-content {
+                    left: 20px;
+                    bottom: 20px;
+                }
+            }
+        }
+    }
+
+    .gallery-style2 {
+        .gallery-content {
+            padding: 20px;
+        }
+
+        .gallery-title {
+            font-size: 20px;
+        }
+
+    }
+
+
+    .gallery-style3 {
+        .gallery-content {
+            left: 0;
+            bottom: 0;
+            padding: 30px;
+        }
+
+        .gallery-title {
+            padding: 7px 15px;
+            font-size: 16px;
+        }
+
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 20px;
+            --shape-width: -5px;
+        }
+    }
+
+}
+
+
+@include md {
+
+    .gallery-style2 {
+        .gallery-content {
+            padding: 20px;
+        }
+
+        .gallery-title {
+            font-size: 20px;
+        }
+    }
+
+
+    .gallery-style3 {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+
+        .gallery-item {
+            width: 100%;
+            height: 300px;
+
+            &.active {
+                width: 100%;
+            }
+        }
+
+
+        .gallery-content {
+            padding: 15px;
+        }
+
+    }
+
+
+
+}
+
+@include md {
+    .project-meta-box {
+        width: 100%;
+    }
+}
+
+
+@include sm {
+
+    .gallery-style3,
+    .gallery-style1 {
+
+        .gallery-title {
+            padding: 6px 12px;
+            font-size: 16px;
+        }
+
+        .gallery-label {
+            font-size: 11px;
+            padding: 7px 10px;
+        }
+    }
+
+    .gallery-style1 {
+        .gallery-content {
+            left: 15px;
+            bottom: 5px;
+        }
+    }
+
+    .gallery-style3 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .project-meta-box {
+        padding: 30px 20px;
+    }
+
+}

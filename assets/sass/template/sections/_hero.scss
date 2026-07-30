@@ -1,0 +1,248 @@
+.hero-layout1 .ls-gui-element.ls-bottom-nav-wrapper {
+  position: absolute !important;
+  left: 140px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.hero-layout1 .ls-gui-element.ls-bottom-nav-wrapper::after,
+.hero-layout1 .ls-gui-element.ls-bottom-nav-wrapper::before {
+  content: '';
+  position: absolute;
+  --shape-height: 51px;
+  top: calc(var(--shape-height) / -1);
+  left: 50%;
+  height: var(--shape-height);
+  width: 2px;
+  margin-left: -1px;
+  /* background-color: var(--white-color); */
+  background-image: linear-gradient(var(--gradient-direction, to top), var(--theme-color) 0%, rgba(33, 32, 32, 0.9) 100%);
+  z-index: 44;
+}
+
+.hero-layout1 .ls-gui-element.ls-bottom-nav-wrapper::after {
+  top: auto;
+  bottom: calc(var(--shape-height) / -1);
+  --gradient-direction: to bottom;
+}
+
+.hero-layout1.ls-v6 .ls-bottom-slidebuttons a {
+  display: block !important;
+  margin: 25px 0;
+  width: 12px !important;
+  height: 12px !important;
+  border: none !important;
+  background-color: var(--white-color) !important;
+  border-radius: 0;
+  transform: scale(1) !important;
+  border: none !important;
+  position: relative;
+}
+
+
+.hero-layout1.ls-v6 .ls-bottom-nav-wrapper .ls-bottom-slidebuttons a:hover {
+  transform: scale(1) !important;
+  width: 12px !important;
+  height: 12px !important;
+  border: none !important;
+  background-color: var(--theme-color) !important;
+}
+
+.hero-layout1.ls-v6 .ls-bottom-slidebuttons a::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  bottom: -10px;
+  right: -10px;
+  border: 2px solid var(--theme-color);
+  display: inline-block;
+  transition: all ease 0.4s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hero-layout1.ls-v6 .ls-bottom-slidebuttons a.ls-nav-active {
+  background-color: var(--theme-color) !important;
+}
+
+.hero-layout1.ls-v6 .ls-bottom-slidebuttons a.ls-nav-active::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.hero-layout1.ls-v6 .ls-nav-sides {
+  display: none !important;
+}
+
+.ls-layer .play-btn i,
+.ls-layer .play-btn:before,
+.ls-layer .play-btn:after {
+  border-radius: 50%;
+}
+
+.ls-icon-btn {
+  width: 58px;
+  height: 58px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: var(--white-color);
+  text-align: center;
+  font-size: 24px;
+  line-height: 58px;
+  color: var(--theme-color);
+}
+
+.ls-icon-btn:hover {
+  background-color: var(--title-color);
+  color: var(--white-color);
+}
+
+
+.ls-layer .vs-btn.style4 {
+  outline: none;
+  border: 2px solid var(--white-color);
+  color: var(--white-color);
+  background-color: transparent;
+}
+
+.ls-hero-btn {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ls-hero-btn .vs-btn {
+  height: 58px;
+  width: 222px;
+  font-family: var(--title-font);
+  line-height: 58px;
+  padding: 0;
+}
+
+.ls-hero-btn .vs-btn.style4 {
+  line-height: 56px;
+}
+
+.ls-gui-element.ls-nav-next,
+.ls-gui-element.ls-nav-prev {
+  width: 60px !important;
+  height: 60px !important;
+  line-height: 60px !important;
+  color: var(--theme-color);
+  background-color: var(--white-color);
+  border-radius: 0 !important;
+  text-align: center;
+  font-size: 24px;
+}
+
+
+.ls-gui-element.ls-nav-next:hover,
+.ls-gui-element.ls-nav-prev:hover {
+  background-color: var(--theme-color);
+  color: var(--white-color);
+  transform: none !important;
+}
+
+.ls-v6 .ls-gui-element.ls-nav-prev {
+  left: 110px !important;
+}
+
+.ls-v6 .ls-gui-element.ls-nav-next {
+  right: 110px !important;
+}
+
+.ls-gui-element.ls-nav-next:after,
+.ls-gui-element.ls-nav-prev:after {
+  display: none;
+}
+
+.ls-gui-element.ls-nav-next:before {
+  content: '\f178';
+  font-family: var(--icon-font);
+}
+
+.ls-gui-element.ls-nav-prev:before {
+  content: '\f177';
+  font-family: var(--icon-font);
+}
+
+
+@media (max-width: 1700px) {
+  .hero-layout1 .ls-gui-element.ls-bottom-nav-wrapper {
+    left: 40px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero-layout1 .ls-gui-element.ls-bottom-nav-wrapper {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ls-layer .play-btn.style2 i {
+    --icon-size: 60px;
+  }
+
+  .ls-icon-btn {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 17px;
+  }
+
+  .ls-hero-btn .vs-btn {
+    width: 160px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 12px;
+  }
+
+
+  .ls-hero-btn .vs-btn.style4 {
+    line-height: 41px;
+  }
+
+
+}
+
+@media (max-width: 767px) {
+  .ls-layer .play-btn.style2 i {
+    --icon-size: 40px;
+    --icon-font-size: 14px;
+  }
+
+
+  .ls-icon-btn {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 15px;
+  }
+
+  .ls-hero-btn .vs-btn {
+    width: 145px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+  }
+
+
+  .ls-hero-btn .vs-btn.style4 {
+    line-height: 38px;
+  }
+
+}
+
+
+.inner-hero-link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}

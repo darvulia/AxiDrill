@@ -1,0 +1,274 @@
+@use "../../base/mixin" as *;
+@use "../../base/variable" as *;
+
+.widget {
+  padding: var(--widget-padding-y, 40px) var(--widget-padding-x, 40px);
+  position: relative;
+  margin-bottom: 40px;
+  background-color: var(--secondary-color);
+
+  select,
+  input {
+    height: 60px;
+    border: none;
+    background-color: var(--input-bg, #F0F4F5);
+    border-radius: 9999px;
+  }
+}
+
+.widget_vs_btns {
+  .vs-btn {
+    width: 100%;
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    i {
+      margin-right: 10px;
+      margin-left: 0;
+    }
+  }
+}
+
+.widget_title {
+  position: relative;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1em;
+  margin: -0.2em 0 38px 0;
+  padding: 0 0 18px 0;
+  font-family: var(--title-font);
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 100%;
+    background-color: var(--border-color);
+    border-radius: 9999px;
+  }
+
+  &:after {
+    width: 30px;
+    background-color: var(--theme-color);
+  }
+
+}
+
+.widget {
+  .search-form {
+    position: relative;
+    display: flex;
+
+    input {
+      background-color: var(--white-color);
+      border-radius: 0;
+      flex: 1;
+      padding: 0 20px;
+      height: 56px;
+    }
+
+    button {
+      width: 56px;
+      height: 56px;
+      background-color: var(--theme-color);
+      color: var(--white-color);
+      border: none;
+      text-align: center;
+      padding: 0;
+
+      &:hover {
+        background-color: var(--title-color);
+        color: var(--white-color);
+      }
+    }
+  }
+}
+
+.wp-block-tag-cloud,
+.tagcloud {
+  a {
+    display: inline-block;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    padding: 13px 18.5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    color: var(--title-color);
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+    position: relative;
+    z-index: 1;
+
+    &:hover {
+      background-color: $theme-color;
+      color: $white-color !important;
+      border-color: transparent;
+
+      &:before {
+        background-color: $white-color;
+      }
+    }
+  }
+}
+
+.widget {
+  .tagcloud {
+    a:not(:hover) {
+      background-color: $white-color;
+    }
+  }
+}
+
+.tagcloud {
+  margin-right: -5px;
+  margin-bottom: -10px;
+}
+
+.recent-post {
+  display: flex;
+  align-items: center;
+  margin-bottom: 21px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .media-img {
+    margin-right: 15px;
+    width: 85px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .post-title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0 0 4px 0;
+  }
+
+  .recent-post-meta {
+    a {
+      text-transform: capitalize;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--body-color);
+
+      i {
+        color: var(--theme-color);
+        margin-right: 7px;
+      }
+    }
+  }
+}
+
+
+.sidebar-gallery {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+
+  .gallery-thumb {
+    overflow: hidden;
+
+    img {
+      transition: all ease 0.4s;
+      transform: scale(1.01) rotate(0);
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1) rotate(5deg);
+      }
+    }
+  }
+}
+
+
+
+
+.vs-widget-about {
+
+  &:not(.style2) {
+    text-align: center;
+
+    .footer-text {
+      color: var(--white-color);
+    }
+  }
+
+  .footer-logo {
+    margin-bottom: 30px;
+  }
+
+  .footer-text {
+    font-size:  18px;
+    max-width: 620px;
+    margin: 0 auto -0.5em auto;
+  }
+  
+}
+
+@include lg {
+  .widget {
+    --widget-padding-y: 30px;
+    --widget-padding-x: 30px;
+  }
+
+  .recent-post {
+    .post-title {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+
+}
+
+
+@include md {
+  .sidebar-area {
+    padding-top: 30px;
+  }
+
+  .wp-block-tag-cloud a,
+  .tagcloud a {
+    padding: 10.5px 18px;
+  }
+}
+
+@include sm {
+
+  .widget_title {
+    font-size: 22px;
+  }
+
+  .sidebar-area {
+    .comment-list {
+      .comment-author {
+        font-size: 18px;
+      }
+      
+      .comment-text {
+        font-size: 14px;
+      }
+    }
+  }
+
+}
+
+@include xs {
+  .widget {
+    padding: 30px 20px;
+  }
+}

@@ -1,0 +1,93 @@
+@use '../../base/mixin' as *;
+
+
+.counter-inner1 {
+    padding: 70px 70px 40px 70px;
+}
+
+.counter-style1 {
+    text-align: center;
+    position: relative;
+    padding: 24px 15px 24px 15px;
+    width: 220px;
+    max-width: 100%;
+    margin-bottom: 30px;
+
+    &:after,
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: calc(50% - 23px);
+        border-width: 2px 2px 0 2px;
+        border-style: solid;
+        border-color: var(--white-color);
+        transition: all ease 0.4s;
+    }
+
+    &:after {
+        top: auto;
+        bottom: 0;
+        border-width: 0 2px 2px 2px;
+    }
+
+    &:Hover {
+        &::before,
+        &:after {
+            height: 50%;
+        }
+    }
+
+    .counter-icon {
+        margin-bottom: 18px;
+    }
+
+    .counter-number {    
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--white-color);
+        margin-bottom: 13px;
+    }
+
+    .counter-text {
+        font-size: 18px;
+        font-family: var(--title-font);
+        font-weight: 600;
+        color: var(--white-color);
+        margin-bottom: 0;
+        line-height: 1;
+    }
+    
+}
+
+
+@include xl {
+    .counter-style1 {
+        width: 100%;
+
+        .counter-icon {
+            margin-bottom: 13px;
+        }
+
+        .counter-number {
+            font-size: 30px;
+        }
+
+        .counter-text {
+            font-size: 16px;
+        }
+    }
+}
+
+
+@include sm {
+
+    .counter-inner1 {
+        padding: var(--section-space-mobile) 15px calc(var(--section-space-mobile) - 30px) 15px;
+    }
+
+
+}

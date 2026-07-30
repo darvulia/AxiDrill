@@ -1,0 +1,105 @@
+@use '../base/mixin' as *;
+
+
+.sec-subtitle3,
+.sec-subtitle2,
+.sec-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--theme-color);
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid var(--border-color);
+  padding: 9px 22px;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  font-family: var(--title-font);
+  margin-bottom: 25px;
+}
+
+.sec-subtitle2 {
+  border-color: var(--theme-color);
+}
+
+.sec-subtitle3 {
+  border-color: var(--white-color);
+  color: var(--white-color);
+}
+
+.sec-title2,
+.sec-title {
+  font-size: 48px;
+  line-height: 1.13;
+  margin-top: -0.2em;
+  margin-bottom: 21px;
+  text-transform: capitalize;
+}
+
+.sec-title2 {
+  text-transform: uppercase;
+}
+
+.sec-text {
+  margin-bottom: 32px;
+}
+
+.sec-btns,
+.title-area {
+  margin-bottom: 50px;
+}
+
+
+.sec-text2 {
+  margin: -10px 0 -0.8em 0;
+  padding-top: 11px;
+  color: var(--title-color);
+  border-top: 1px solid #D8DDE1;
+
+  .number {
+    color: var(--theme-color);
+    font-size: 30px;
+    font-family: var(--title-font);
+    font-weight: 700;
+  }
+}
+
+@include ml {
+
+  .sec-title2,
+  .sec-title {
+    font-size: 40px;
+  }
+
+}
+
+@include lg {
+
+  .sec-title,
+  .sec-title2 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+
+  
+  .title-area,
+  .sec-btns {
+    margin-bottom: 40px;
+  }  
+
+  .title-area {
+    &.has-sec-btns {
+      margin-bottom: 20px;
+    }
+  }
+
+}
+
+@include sm {
+
+  .sec-title,
+  .sec-title2 {
+    font-size: 30px;
+  }
+}

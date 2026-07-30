@@ -1,0 +1,420 @@
+@use '../../base/mixin' as *;
+
+
+.testi-shape1 {
+    position: absolute;
+    right: 70px;
+    bottom: 80px;
+}
+
+.testi-shape2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.testi-style1 {
+    max-width: 690px;
+    margin: 0 auto 60px auto;
+
+    .slick-arrow {
+        opacity: 1;
+        visibility: visible;
+        left: auto;
+        top: auto;
+        bottom: 0;
+        right: 30px;
+        margin: 0 0 -30px 0;
+
+        &.slick-prev {
+            right: 100px;
+        }
+    }
+
+
+    .testi-inner {
+        background-color: var(--smoke-color);
+        padding: 40px 40px 0 40px;
+        display: flex;
+    }
+
+    .testi-body {
+        flex: 1;
+        padding-top: 25px;
+    }
+
+    .testi-author {
+        padding: 0 70px 0 0;
+        position: relative;
+    }
+
+    .testi-rating {
+        position: absolute;
+        bottom: 75px;
+        left: 20px;
+        background-color: var(--theme-color);
+        padding: 15px 20px 15px 15px;
+    }
+
+    .testi-star {
+        color: var(--yellow-color);
+        font-size: 14px;
+        letter-spacing: 5px;
+        line-height: 1;
+        margin-bottom: 13px;
+    }
+
+    .testi-name  {
+        color: var(--white-color);
+        margin: 0;
+        line-height: 1;
+        font-weight: 700;
+        font-family: var(--title-font);
+        font-size: 20px;
+    }
+
+    .testi-top {
+        display: flex;
+        margin-bottom: 23px;
+    }
+
+    .testi-icon {    
+        color: var(--theme-color);
+        font-size: 50px;
+        display: inline-block;
+        line-height: 1;
+        margin-right: 15px;
+    }
+
+    .testi-title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 1;
+        margin-bottom: 6px;
+    }
+
+    .testi-label {
+        font-weight: 500;
+        font-size: 14px;
+        margin: 0 0 0 0;
+    }
+}
+
+
+.testi-style2 {
+    text-align: center;
+    padding: 0.1px 15px 53px 15px;
+    border: 2px solid var(--border-color);
+    margin: 50px 0 30px 0;
+
+    .slick-arrow {
+        --pos-x: -45px;
+    }
+
+    .avater {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        margin: 8px 10px;
+        transition: all ease 0.4s;
+        cursor: pointer;
+        transform: scale(0.60);
+        transform-origin: center center;
+        position: relative;
+    }
+
+    .vs-slick-prevto, 
+    .vs-slick-nextto {
+        .avater {
+            transform: scale(0.85);
+            z-index: 1;
+        }
+    }
+    
+    .vs-slick-prev, 
+    .vs-slick-next {
+        .avater {
+            z-index: 2;
+            transform: scale(1);
+        }
+    }
+    
+    .slick-center {
+        .avater {
+            z-index: 3;
+            transform: scale(1.15);
+        }
+    }
+    
+    .avater-area {
+        width: 510px;
+        max-width: 100%;
+        margin: -53px auto 36px auto;
+    }
+
+    .testi-name {    
+        font-size: 24px;
+        line-height: 1;
+        margin-bottom: 9px;
+    }
+
+    .testi-text {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 940px;
+    }
+
+    .testi-degi {
+        font-size: 14px;
+        line-height: 1;
+        margin-bottom: 32px;
+    }
+
+    .testi-rating {
+        color: var(--yellow-color);
+        font-size: 16px;
+        letter-spacing: 5px;
+    }
+    
+}
+
+
+.avater-style1 {
+    background-color: var(--theme-color);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 25px;
+    padding: 65px;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(45deg);
+    width: 490px;
+    height: 490px;
+    margin-top: -18px;
+    margin-bottom: 12px;
+
+    .avater {
+        background-color: var(--white-color);
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            border: 5px solid transparent;
+            z-index: 1;
+            transition: all ease 0.4s;
+        }
+
+        img {
+            width: 100%;
+            transform: rotate(-45deg) scale(1.41);
+        }
+
+        &.active,
+        &:hover {
+            &:before {
+                border-color: var(--white-color);
+            }
+        }
+    }
+    
+}
+
+.testi-style3 {
+    
+    .testi-text {
+        font-weight: 500;
+        font-family: var(--title-font);
+        font-size: 24px;
+        line-height: 1.45;
+        margin-bottom: 36px;
+    }
+
+    .testi-rating {
+        color: var(--yellow-color);
+        font-size: 18px;
+        letter-spacing: 5px;
+        margin-bottom: 11px;
+    }
+
+    .testi-name {
+        margin-bottom: 6px;
+    }
+
+    .testi-degi {
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+
+    .slick-arrow {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 8px;
+        margin: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .slick-prev {
+        right: 70px;
+    }
+
+}
+
+
+@include xl {
+
+    .avater-style1 {
+        transform: rotate(0);
+        padding: 80px;
+        gap: 40px;
+        margin: 0;
+        width: 90%;
+        height: auto;
+        justify-content: stretch;
+
+        .avater {
+            img {
+                transform: rotate(0);
+            }
+        }
+    }
+
+}
+
+@include ml {
+
+    .avater-style1 {
+        padding: 60px;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .testi-style3 {
+        .testi-text {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+}
+
+
+@include lg {
+    .testi-style1 {
+        max-width: 100%;
+        margin-bottom: 30px;
+
+        .testi-author {
+            max-width: 230px;
+            padding: 0 30px 0 0;
+            margin: 0 auto;
+        }
+        
+        .testi-inner {
+            padding: 20px 20px 0 20px;
+        }
+        
+        .testi-rating {
+            left: 0;
+            text-align: center;
+            width: max-content;
+            max-width: 100%;
+            bottom: 30px;
+        }
+        
+        .testi-name {
+            font-size: 16px;
+        }
+
+    }
+
+
+    .avater-style1 {
+        padding: 20px;
+        gap: 10px;
+    }
+
+
+}
+
+@include md {
+    .avater-style1 {
+        margin-bottom: 40px;
+        grid-template-columns: repeat(4, auto);
+    }
+
+    .testi-style3 {
+        .testi-text {
+            font-size: 16px;
+        }
+    }
+}
+
+@include sm {
+    .testi-style1 {        
+        .testi-author {
+            padding: 0;
+        }
+        
+        .testi-body {
+            padding-top: 0;
+        }
+        
+        .testi-inner {
+            flex-direction: column-reverse;
+            text-align: center;
+            padding: 35px 15px 0 15px;
+        }
+        
+        .testi-top {
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .testi-title {
+            margin-bottom: 8px;
+        }
+        
+        .testi-icon {
+            margin-bottom: 20px;
+        }
+        
+        .testi-rating {
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-60%);
+        }
+    }
+
+    .testi-style2 {
+        padding: 0.1px 15px 30px 15px;
+
+        .testi-degi {
+            margin-bottom: 15px;
+        }
+
+        .avater {
+            width: 70px;
+            height: 70px;
+        }
+        
+        .avater-area {
+            margin-bottom: 20px;
+        }
+
+        .avater-area {
+            width: 285px;
+            margin: -45px auto 26px auto;
+        }
+    }
+
+
+}

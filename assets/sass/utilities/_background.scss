@@ -1,0 +1,32 @@
+@use "../base/mixin";
+@use "../base/variable";
+
+.background-image,
+[data-bg-src] {
+  @include mixin.background-content(no-repeat, cover, center center);
+}
+
+.bg-fluid {
+  @include mixin.background-content(no-repeat, 100% 100%, center center);
+}
+
+.bg-auto {
+  background-size: auto auto;
+}
+
+.bg-title {
+  background-color: var(--title-color);
+}
+
+.bg-theme {
+  background-color: var(--theme-color);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color) !important;
+}
+
+.bg-bottom {
+  background-position: bottom center;
+  background-size: 100% auto;
+}

@@ -1,0 +1,94 @@
+@use '../../base/mixin' as *;
+
+.process-shape1 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.process-style1 {
+    position: relative;
+    text-align: center;
+    background-color: var(--secondary-color);
+    padding: 30px 30px 22px 30px;
+    margin: 25px 0 50px 20px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: -20px;
+        top: 30px;
+        right: 25px;
+        bottom: -20px;
+        border: 1px solid var(--border-color);
+        z-index: -1;
+        transition: all ease 0.4s;
+    }
+
+    .process-number {
+        position: absolute;
+        left: 20px;
+        top: -25px;
+        font-size: 24px;
+        font-weight: 700;
+        background-color: var(--title-color);
+        transition: all ease 0.4s;
+        color: var(--white-color);
+        width: 50px;
+        height: 45px;
+        line-height: 45px;
+        display: inline-block;
+
+        &:before {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 0;
+            height: 25px;
+            width: 10px;
+            clip-path: polygon(0 0, 0 100%, 100% 100%);
+            background-color: inherit;
+            display: inline-block;
+        }
+    }
+    
+    .process-icon {
+        margin-bottom: 25px;
+    }
+
+    .process-name {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .process-text {
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        &::before {
+            border-color: var(--theme-color);
+        }
+        
+        .process-number {
+            background-color: var(--theme-color);
+        }
+    }
+}
+
+
+@include lg {
+    .process-style1 {
+    margin: 15px 0 50px 15px;
+    padding: 30px 15px 28px 15px;
+
+    &:before {
+        left: -15px;
+        top: 15px;
+        right: 20px;
+        bottom: -15px;
+    }
+}
+
+
+}

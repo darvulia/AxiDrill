@@ -1,0 +1,149 @@
+
+@use '../../base/mixin' as *;
+@use '../../base/variable' as *;
+
+.progress-style3,
+.progress-style2,
+.progress-style1 {
+
+    .progress-status {
+        position: relative;
+        height: 10px;
+        width: 100%;
+        background-color: #D8DDE1;
+    }
+
+    .progress-number,
+    .progress-title {
+        font-family: var(--title-font);
+        font-size: 16px;
+        color: var(--title-color);
+        font-weight: 600;
+        margin: 0 0 0 0;
+        line-height: 1;
+    }
+
+    .progress-title {
+        margin-bottom: 15px;
+    }
+
+    .progress-number {    
+        position: absolute;
+        top: -33px;
+        right: -20px;
+    }
+
+    .progress-bar {    
+        background-color: var(--theme-color);
+        height: 100%;
+        position: relative;
+        overflow: visible;
+        background-image: linear-gradient(90deg, 
+            rgba(255,255,255, 0.70) 4.55%, 
+            var(--theme-color) 4.55%, 
+            var(--theme-color) 50%, 
+            rgba(255,255,255, 0.70) 50%, 
+            rgba(255,255,255, 0.70) 54.55%, 
+            var(--theme-color) 54.55%, 
+            var(--theme-color) 100%
+        );
+        background-size: 44.00px 44.00px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            border: 5px solid #D8DDE1;
+            background-color: var(--theme-color);
+            border-radius: 50%;
+            margin: -10px -10px 0 0;
+        }
+    }
+}
+
+.progress-style1 {
+    max-width: 570px;
+
+    .progress-number,
+    .progress-title {
+        color: var(--white-color);
+    }
+}
+
+.progress-style2 {
+
+    .progress-item {
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 30px;
+        }
+    }
+    
+}
+
+
+.progress-style3 {
+    padding-top: 5px;
+
+    .progress-number {
+        right: 0;
+        font-size: 18px;
+        font-family: $body-font;
+    }
+
+    .progress-title {
+        font-size: 18px;
+    }
+
+    .progress-status {
+        height: 8px;
+        display: flex;
+        align-items: center;
+        background-color: $white-color;
+        border: 1px solid $smoke-color;
+        padding: 2px;
+    }
+    
+    .progress-bar {
+        background-image: none;
+        height: 2px;
+        border-radius: 6px;
+        position: static;
+
+        &::before {
+            display: none;    
+        }
+    }
+
+
+    .progress-item {
+        margin-bottom: 30px;
+    }
+
+}
+
+
+@include lg {
+    
+    .progress-style1 {
+        max-width: 100%;
+    }
+}
+
+@include sm {
+
+    .progress-style2 {
+        .progress-item {
+            margin-bottom: 25px;
+
+            &:last-child {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+}

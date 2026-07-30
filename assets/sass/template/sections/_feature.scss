@@ -1,0 +1,234 @@
+
+@use '../../base/mixin' as *;
+@use '../../base/variable' as *;
+
+.feature-box1 {
+    margin-top: 40px;
+    background-color: var(--secondary-color);
+    border-top: 4px solid var(--theme-color);
+    transition: all ease 0.4s;
+
+    &:hover {
+        border-top-color: $title-color;
+    }
+}
+
+
+.feature-style1 {
+    padding: 30px 35px 21px 35px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        height: 125px;
+        margin-top: -62.5px;
+        width: 1px;
+        background-color: var(--body-color);
+        opacity: 0.40;
+    }
+
+
+    &:first-child {
+        padding-left: 30px;
+    }
+
+    &:last-child {
+        padding-right: 30px;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    .feature-icon {
+        margin-bottom: 25px;
+    }
+
+    .feature-title {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .feature-text {
+        margin-bottom: 0;
+    }
+}
+
+
+.feature-style2 {
+    background-color: var(--white-color);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    margin-bottom: 30px;
+
+    .dot-shape {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        background-color: var(--theme-color);
+        width: 12px;
+        height: 12px;
+        z-index: 1;
+        margin: -6px 0 0 -6px;
+    }
+
+    .feature-item {
+        display: flex;
+        padding: 45px 50px 37px 50px;
+        transition: all ease 0.4s;
+        background-color: transparent;
+
+        &:hover {
+            background-color: $title-color;
+
+            .feature-title,
+            .feature-text {
+                color: $white-color;
+            }
+        }
+    }
+
+    .feature-icon {
+        margin-right: 25px;
+    }
+
+    .feature-content {
+        flex: 1;
+    }
+
+    .feature-title {
+        margin-top: -0.2em;
+        margin-bottom: 12px;
+        transition: all ease 0.4s;
+    }
+
+    .feature-text {
+        margin-bottom: 0;
+        transition: all ease 0.4s;
+    }
+
+    &:after,
+    &::before {
+        content: '';
+        position: absolute;
+        background-color: var(--border-color);
+    }
+    
+    &::before {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 1px;
+        margin-left: -0.5px;
+    }
+    
+    &:after {
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 1px;
+        margin-top: -0.5px;
+    }
+}
+
+
+.feature-bg1 {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+
+    .shape-2 {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        line-height: 1;
+        padding-left: 20px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            background-color: var(--theme-color);
+            clip-path: polygon(365px 0, 100% 0, 100% 100%, 0 100%);;
+        }
+        
+        img {
+            z-index: 2;
+            position: relative;
+            width: 100%;
+            clip-path: polygon(365px 0, 100% 0, 100% 100%, 0 100%);;
+        }
+    }
+
+}
+
+
+@include xl {
+    .feature-style1 {
+        padding: 15px 20px 20px 15px;
+        position: relative;
+        
+        &:first-child {
+            padding-left: 15px;
+        }
+
+        .feature-icon {
+            margin-bottom: 15px;
+            max-width: 50px;
+        }   
+    }
+
+    .feature-style2 {
+        .feature-item {
+            padding: 35px 25px 30px 25px;
+        }
+    }
+}
+
+@include sm {
+
+    .feature-style1 {
+        &::before {
+            display: none;
+        }
+    }
+
+
+    .feature-style2 {
+        display: block;
+        
+        &::before,
+        &::after,
+        .dot-shape {
+            display: none;
+        }
+
+
+        .feature-item {
+            display: block;
+            text-align: center;
+            border-bottom: 1px solid $border-color;
+            padding: 30px 20px;
+        }
+
+        .feature-icon {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+
+    }
+
+}

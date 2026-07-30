@@ -1,0 +1,39 @@
+.ticker-style1 {
+    
+    .eocjs-newsticker {
+        padding: 39px 0;
+        background-color: var(--theme-color);
+
+    }
+    
+    .eocjs-newsticker-container {
+        height: 45px;        
+    }
+
+    .eocjs-newsticker-one,
+    .eocjs-newsticker-two {
+        height: 45px;
+        line-height: 45px;
+    }
+
+    span {
+        font-size: 36px;
+        font-family: var(--title-font);
+        font-weight: 700;
+        line-height: 45px;
+        color: var(--white-color);
+
+        &:nth-child(even) {
+            color: transparent;
+            -webkit-text-stroke: 1px #fff;
+        }
+
+        i {
+            margin-left: 45px;
+            margin-right: 15px;
+            -webkit-text-stroke: 1px transparent;
+            color: var(--white-color);
+        }
+    }
+
+}

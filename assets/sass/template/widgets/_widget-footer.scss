@@ -1,0 +1,173 @@
+@use "../../base/mixin" as *;
+@use "../../base/variable" as *;
+
+.footer-widget {
+  &,
+  .widget {
+    padding: 0;
+    border: none;
+    padding-bottom: 0;
+    background-color: transparent;
+  }
+  
+  .widget_title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 32px;
+    padding-bottom: 17px;
+    color: var(--white-color);
+
+    &:after,
+    &::before {
+      left: 0;
+      width: 20px;
+      height: 1.5px;
+      background-color: var(--theme-color);
+      border-radius: 0;
+    }
+
+    &:after {
+      left: 30px;
+      width: 50px;
+    }
+  }
+
+  &.widget_meta,
+  &.widget_pages,
+  &.widget_archive,
+  &.widget_categories,
+  &.widget_nav_menu {
+
+    ul {
+      margin-top: -0.1em;
+
+      ul {
+        margin-top: 0;
+      }
+    }
+
+    a {
+      position: relative;
+      width: max-content;
+      display: block;
+      border: none;
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 21px;
+      color: var(--white-color);
+      font-family: var(--body-font);
+      border: none;
+      padding: 0 0 0 18px;
+
+      &:after {
+        display: none;
+      }
+
+      // &::before {
+      //   content: '';
+      //   width: 8px;
+      //   height: 8px;
+      //   background-color: var(--white-color);
+      //   transition: all ease 0.4s;
+      //   position: absolute;
+      //   left: 0;
+      //   top: 50%;
+      //   margin-top: -4px;
+      //   border-radius: 50%;
+      // }
+
+      &::before {
+        content: '\f105';
+        position: absolute;
+        font-family: $icon-font;
+        font-weight: 400;
+        left: 0;
+        top: 50%;
+        height: 10px;
+        margin-top: -5px;
+        font-size: 18px;
+        display: inline-block;
+        line-height: 10px;
+        transition: all ease 0.4s;
+        color: $white-color;
+      }
+      
+      &:hover {
+        color: var(--theme-color);
+        
+        &::before {
+          color: $theme-color;
+          animation: bounceonhover 0.6s infinite linear;
+        }
+      }
+    }
+
+    li {
+      >span {
+        @include equal-size(auto);
+        position: relative;
+        background-color: transparent;
+        color: $body-color;
+        line-height: 1;
+      }
+
+      &:last-child {
+        a {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+
+.footer-table {
+  
+  table {
+    border: none;
+    margin: 0;
+  }
+  
+  
+  td {
+    color: var(--white-color);
+    padding: 0 40px 21px 0;
+    border: none;
+    line-height: 1;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  tr {
+    &:last-child {
+      td {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+}
+
+
+@include lg{
+  .footer-widget {
+    margin-bottom: 50px;
+
+    .widget_title {
+      font-size: 20px;
+      margin-bottom: 30px;
+      margin-top: 0;
+    }
+  }
+}
+
+
+@include md {
+  .footer-widget {
+    .widget_title {
+      font-size: 22px;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@use '../../base/mixin' as *;
+
+
+.error-content {
+  text-align: center;
+
+  .vs-btn {
+    padding: 18px 40px;
+  }
+}
+
+.error-img {
+  margin-bottom: 58px;
+}
+
+.error-text {
+  margin-bottom: 18px;
+  font-weight: 500;
+  max-width: 570px;
+  margin: 0 auto 33px auto;
+}
+
+
+@include sm {
+  .error-img {
+    margin-bottom: 30px;
+  }
+}
