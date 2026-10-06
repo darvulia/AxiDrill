@@ -475,10 +475,10 @@
     return valid;
   }
 
-  $(form).on("submit", function (element) {
+/*   $(form).on("submit", function (element) {
     element.preventDefault();
     sendContact();
-  });
+  }); */
 
   /*----------- 10. Magnific Popup ----------*/
   /* magnificPopup img view */
