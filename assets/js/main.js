@@ -480,6 +480,7 @@
     sendContact();
   }); */
 
+
   /*----------- 10. Magnific Popup ----------*/
   /* magnificPopup img view */
   $(".popup-image").magnificPopup({

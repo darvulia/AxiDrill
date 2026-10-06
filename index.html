@@ -327,41 +327,47 @@
     ==============================-->
     <section class="  ">
         <div class="container">
-            <div class="form-style2" data-bg-src="assets/img/bg/form-bg-1-1.png">
-                <div class="row gx-25">
-                    <div class="col-12">
-                        <h2 class="form-title h3">Reservar una Cita</h2>
-                    </div>
-                    <div class="col-md-6 col-lg-4 form-group">
-                        <input type="text" placeholder="Nombre">
-                        <i class="fal fa-user"></i>
-                    </div>
-                    <div class="col-md-6 col-lg-4 form-group">
-                        <input type="text" placeholder="Apellido">
-                        <i class="fal fa-user"></i>
-                    </div>
-                    <div class="col-md-6 col-lg-4 form-group">
-                        <input type="email" placeholder="Email">
-                        <i class="fal fa-envelope"></i>
-                    </div>
-                    <div class="col-md-6 col-lg-4 form-group">
-                        <input type="tel" placeholder="Número de Teléfono">
-                        <i class="fal fa-phone-alt"></i>
-                    </div>
-                    <div class="col-md-6 col-lg-4 form-group">
-                        <select>
-                            <option>Seleccionar Servicio</option>
-                            <option>Verificación de Línea</option>
-                            <option>Nuevo Cable</option>
-                            <option>Encontrar Falla</option>
-                            <option>Otros</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <button class="vs-btn w-100" type="submit">Solicite su cita Ahora</button>
+            <form action="https://formsubmit.co/fullmoonofautumn@gmail.com" method="POST" class="ajax">         
+                <div class="form-style2" data-bg-src="assets/img/bg/form-bg-1-1.png">
+                    <div class="row gx-25">
+                        <div class="col-12">
+                            <h2 class="form-title h3">Reservar una Cita</h2>
+                        </div>
+                        <div class="col-md-6 col-lg-4 form-group">
+                            <input type="hidden" id="_subject" name="_subject" value="" />
+                            <input type="hidden" id="_captcha" name="_captcha" value="false" />
+                            <input type="hidden" id="_template" name="_template" value="table" />
+
+                            <input id="name" name="name" required type="text" placeholder="Nombre">
+                            <i class="fal fa-user"></i>
+                        </div>
+                        <div class="col-md-6 col-lg-4 form-group">
+                            <input type="text" placeholder="Apellido" name="lastname" id="lastname" required>
+                            <i class="fal fa-user"></i>
+                        </div>
+                        <div class="col-md-6 col-lg-4 form-group">
+                            <input type="email" id="email" name="email" required  placeholder="Email">
+                            <i class="fal fa-envelope"></i>
+                        </div>
+                        <div class="col-md-6 col-lg-4 form-group">
+                            <input type="tel" placeholder="Número de Teléfono" name="comments" id="comments" >
+                            <i class="fal fa-phone-alt"></i>
+                        </div>
+                        <div class="col-md-6 col-lg-4 form-group">
+                            <select name="subject" id="subject">
+                                <option>Seleccionar Servicio</option>
+                                <option>Verificación de Línea</option>
+                                <option>Nuevo Cable</option>
+                                <option>Encontrar Falla</option>
+                                <option>Otros</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 col-lg-4">                            
+                            <button class="vs-btn w-100" type="submit">Solicite su cita Ahora</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </section><!--==============================
     About Us
@@ -655,7 +661,7 @@
     <script src="assets/js/isotope.pkgd.min.js"></script>
     <!-- Main Js File -->
     <script src="assets/js/main.js"></script>
-
+    <script src="assets/js/sendEmail.js"></script>
 
 </body>
 
