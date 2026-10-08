@@ -1,4 +1,6 @@
-   $('form.ajax').submit(function (element) {
+SnapAlert().SnapOptions({ });
+
+$('form.ajax').submit(function (element) {
     element.preventDefault();
 
     let objectForm = $(this),
@@ -28,16 +30,50 @@
         console.log(sendData);
 
     // https://api.jquery.com/jQuery.ajax
-    $.ajax({
+/*     $.ajax({
         method: sendMethod,
         url: sendUrl,
         dataType: 'json',
         accepts: 'application/json',
         data: sendData,
-        success: (data) => {
-            console.log(data);
-            alert('Gracias por tu mensaje, nos pondremos en contacto contigo lo antes posible.');
+        success: function(response) {
+            alert("Gracias por tu mensaje, nos pondremos en contacto contigo lo antes posible.");
         },
         error: (err) => console.log(err)
-    });
+    }); */
+
+        jQuery
+        .ajax({
+          url: sendUrl,
+          data: sendData,
+          type: sendMethod,
+        })
+        .done(function (response) {
+          // Make sure that the formMessages div has the 'success' class.
+          // formMessages.removeClass("error");
+          // formMessages.addClass("success");
+          // Set the message text.
+          // formMessages.text(response);
+          // Clear the form.
+          // $(form + ' input:not([type="submit"]),' + form + " textarea").val("");    
+            SnapAlert().info('Info', 'Informacion enviada!');
+
+        })
+        .fail(function (data) {
+          // Make sure that the formMessages div has the 'error' class.
+          // formMessages.removeClass("success");
+          // formMessages.addClass("error");
+          // Set the message text.
+          //if (data.responseText !== "") {
+            // formMessages.html(data.responseText);
+          //} else {
+           // formMessages.html(
+            //  "Oops! An error occured and your message could not be sent."
+           // );
+          //}
+            SnapAlert().error('Error', 'Something went wrong.');
+        });
+
+
+
 });
